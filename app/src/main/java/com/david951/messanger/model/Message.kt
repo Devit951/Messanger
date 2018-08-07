@@ -1,4 +1,4 @@
-package com.david951.messanger.presentation
+package com.david951.messanger.model
 
 import android.graphics.Color
 
