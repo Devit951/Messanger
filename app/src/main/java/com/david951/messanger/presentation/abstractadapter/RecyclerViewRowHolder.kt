@@ -1,4 +1,4 @@
-package com.david951.messanger.presentation
+package com.david951.messanger.presentation.abstractadapter
 
 import android.support.v7.widget.RecyclerView
 import android.view.View

@@ -1,11 +1,12 @@
-package com.david951.messanger.presentation
+package com.david951.messanger.presentation.abstractadapter
 
 import android.support.v7.widget.RecyclerView
 import android.view.ViewGroup
 
-abstract class AbstractRecyclerViewRowAdapter(private val listOfItems: List<Any>) : RecyclerView.Adapter<RecyclerView.ViewHolder>() {
+abstract class AbstractRecyclerViewRowAdapter : RecyclerView.Adapter<RecyclerView.ViewHolder>() {
 
     protected val rowSelector = RecyclerViewRowSelector()
+    private val listOfItems = mutableListOf<Any>()
 
     override fun getItemViewType(position: Int): Int = rowSelector.getRow(listOfItems[position]).type()
 
@@ -16,5 +17,15 @@ abstract class AbstractRecyclerViewRowAdapter(private val listOfItems: List<Any>
     override fun onBindViewHolder(holder: RecyclerView.ViewHolder, position: Int) {
         val item = listOfItems[position]
         rowSelector.getRow(item).bind(holder , item)
+    }
+
+    fun addAll(items: List<Any>){
+        listOfItems.addAll(items)
+        notifyDataSetChanged()
+    }
+
+    fun remove(position: Int){
+        listOfItems.removeAt(position)
+        notifyItemRemoved(position)
     }
 }
