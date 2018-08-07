@@ -1,3 +1,5 @@
 <resources>
-    <string name="app_name">Messanger</string>
+    <string name="app_name">Messenger</string>
+    <string name="message_id">ID = %s</string>
+    <string name="message_date">Message date = %s</string>
 </resources>
