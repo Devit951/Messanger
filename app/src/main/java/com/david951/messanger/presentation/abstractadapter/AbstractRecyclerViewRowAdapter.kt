@@ -28,4 +28,9 @@ abstract class AbstractRecyclerViewRowAdapter : RecyclerView.Adapter<RecyclerVie
         listOfItems.removeAt(position)
         notifyItemRemoved(position)
     }
+
+    fun <T: Any> restore(removedPosition: Int , removedElement: T) {
+        listOfItems.add(removedPosition , removedElement)
+        notifyItemInserted(removedPosition)
+    }
 }
