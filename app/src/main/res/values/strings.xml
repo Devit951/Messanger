@@ -2,4 +2,7 @@
     <string name="app_name">Messenger</string>
     <string name="message_id">ID = %s</string>
     <string name="message_date">Message date = %s</string>
+    <string name="delete">Delete</string>
+    <string name="undo">Undo</string>
+    <string name="message_you_can_undo_this_action">You can undo this action</string>
 </resources>
